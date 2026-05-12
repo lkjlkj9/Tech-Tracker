@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script type="module" src="scripts/app.js" defer></script>
+    <title>Tech Tracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Ваш прогресс</h2>
+
+      <div class="progress">
+        <div class="progress-bar">
+          <div class="progress-value"></div>
+        </div>
+      
+
+        <div class="tech-grid">
+<!--             <div class="card"><p>HTML</p></div>
+            <div class="card"><p>CSS</p></div> -->
+
+        </div>
+    </div>
+
+      <div class="tech-form">
+        <h3>Добавить технологию</h3>
+        <form action="submit" class="new-tech">
+          <input type="text" placeholder="Название..." id="newTechTitle" />
+          <textarea placeholder="Добавьте описание..." id="newTechNote">
+          </textarea>
+          <button type="submit" class="create-tech-btn">Создать</button>
+        </form>
+      </div>
+
+      <div class="modal" id="modal">
+        <div class="modal-window active">
+          <h3 class="modal-title">Название</h3>
+          <p class="description">Описание</p>
+          <hr />
+          <div class="chek">
+            <input type="checkbox" name="chekBtn" id="done" />
+            <label for="done">Выучил</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

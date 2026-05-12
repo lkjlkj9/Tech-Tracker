@@ -1,0 +1,208 @@
+:root {
+  --font: "Avantgarde";
+  --f-z: 16px;
+  --f-z-2: 24px;
+  --color: black;
+
+  --bg: LavenderBlush;
+  --bg-2: WhiteSmoke;
+  --bg-3: rgba(40, 40, 40);
+  --bg-4: rgba(239, 235, 227);
+  --bg-5: DeepSkyBlue;
+  --bg-6: DodgerBlue;
+  --bg-7: rgba(90, 126, 168);
+  --bg-8: rgb(95, 149, 211);
+
+  --br-progress: 1px solid rgb(95, 149, 211);
+
+  --bg-modal: rgba(0, 0, 0, 0.5);
+
+  --bg-f: inherit;
+  --br-f: 0px solid inherit;
+  --br-r-f: 10px;
+  --box-s-f-f: 0 0 5px 5px MediumPurple;
+
+  --bg-btn: Lavender;
+  --bg-btn-h: MediumPurple;
+  --br-btn: 0px solid SlateBlue;
+  --br-r-btn: 15px;
+  --color-btn: white;
+}
+
+body {
+  background-color: var(--bg-4);
+  font-family: var(--font);
+  font-size: var(--f-z-2);
+}
+
+.container {
+  margin: auto;
+  width: 900px;
+  padding: 10px;
+}
+
+.progress-bar {
+  display: block;
+  height: 30px;
+  border: var(--br-progress);
+  border-radius: 15px;
+}
+
+.progress-value {
+  display: block;
+  height: 30px;
+  width: 30%;
+  background: linear-gradient(
+    to right,
+    Magenta,
+    DeepSkyBlue,
+    MediumSpringGreen
+  );
+  border-radius: 15px;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.card {
+  height: 100px;
+  width: 40%;
+  border-radius: 10px;
+  border: 0 solid green;
+  background: var(--bg-2);
+  flex-grow: 1;
+  transition: 0.1s box-shadow;
+
+  display: flex;
+}
+.card > p {
+  margin: auto;
+}
+
+.card:hover {
+  position: relative;
+  top: -5px;
+  left: -5px;
+  box-shadow: 5px 5px 5px 0 rgb(230, 172, 106);
+  cursor: pointer;
+}
+
+.card.active {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.tech-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.new-tech {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+#newTechTitle,
+#newTechNote {
+  margin-bottom: 20px;
+  border: var(--br-f);
+  border-radius: var(--br-r-f);
+  transition: 0.2s box-shadow;
+}
+
+#newTechTitle:focus,
+#newTechNote:focus {
+  outline: none;
+  box-shadow: var(--box-s-f-f);
+}
+
+#newTechTitle {
+  height: 35px;
+  padding: 5px 10px;
+}
+
+#newTechNote {
+  height: 150px;
+  padding: 15px 8px;
+}
+
+.create-tech-btn {
+  width: 120px;
+  height: 50px;
+  font-size: var(--f-z);
+  border: var(--br-btn);
+  border-radius: var(--br-r-btn);
+  background-color: var(--bg-6);
+  color: var(--color-btn);
+  transition: 0.2s background;
+}
+
+.create-tech-btn:hover {
+  background-color: var(--bg-5);
+  color: var(--color-btn);
+}
+
+/* Модальное окно */
+
+.modal {
+  pointer-events: none;
+  opacity: 0;
+  backdrop-filter: blur(8px);
+  background-color: var(--bg-modal);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-window {
+  width: 600px;
+  height: 350px;
+  background-color: var(--bg-2);
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+
+  margin: 200px auto;
+
+  transform: translateY(-300px);
+  transition: 2s;
+}
+
+.modal-window.active {
+  transform: translateY(0);
+}
+
+.modal-title {
+  margin: 0;
+}
+
+.description {
+  border: var(--br-btn);
+  border-radius: 20px;
+  height: 350px;
+  padding: 10px;
+}
+
+.modal > hr {
+  height: 2px;
+  border: none;
+}
