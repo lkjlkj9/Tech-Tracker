@@ -1,13 +1,21 @@
-export let techs = [
+export const techs = [
   { id: 1, 
+    type: "html", 
     title: "HTML", 
     description: "Описание", 
-    completed: false,
- },
-   {id: 2, 
-    title: "CSS", 
-    description: "Описание", 
-    completed: false,
- },
-
+    done: true },
+  {
+    id: 2,
+    type: "css",
+    title: "CSS",
+    description: "Описание",
+    done: false,
+  },
+  {
+    id: 3,
+    type: "js",
+    title: "JavaScript",
+    description: "Описание",
+    done: false,
+  },
 ];
